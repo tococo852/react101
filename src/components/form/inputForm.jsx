@@ -2,17 +2,8 @@
 import { useState } from "react"
 import { InputBar } from "../input/inputBar"
 
-const InputForm=()=>{
-    const [isEditable, setIsEditable] = useState(true)
-    const [formData, setFormData]=useState({
-        name:'',
-        email:'',
-        phone:'',
-        school:'',
-        title:'',
-        egress:''
+const InputForm=({isEditable,setIsEditable,formData,setFormData})=>{
 
-    })
 
     const changeValue=(value,valueKey)=>{
         setFormData(prevData=>({...prevData,[valueKey]:value}))
@@ -20,6 +11,8 @@ const InputForm=()=>{
 
     const editToggle =(e)=>{
         e.preventDefault()
+
+        
         setIsEditable(prev=>(!prev))
     }
 
@@ -65,6 +58,12 @@ const InputForm=()=>{
         <InputBar label='egress' 
         fieldKey='egress'
         value={formData['egress']}
+        changeValue={changeValue}
+        isEditable={isEditable}/>
+
+        <InputBar label='experience' 
+        fieldKey='experience'
+        value={formData['experience']}
         changeValue={changeValue}
         isEditable={isEditable}/>
         {isEditable?(
