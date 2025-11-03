@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { InputForm } from './components/form/inputForm'
-import { CvDisplay } from './components/CVdisplay/CVdisplay'
+import { CvDisplay , DownloadButton} from './components/CVdisplay/CVdisplay'
 function App() {
     const [isEditable, setIsEditable] = useState(true)
     const [formData, setFormData]=useState({
@@ -27,7 +27,10 @@ function App() {
       <CvDisplay
       formData={formData}
       isEditable={isEditable}/>
+      <DownloadButton formData={formData}/>
+
     </>
+
   )
 }
 
