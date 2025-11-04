@@ -41,7 +41,37 @@
   color: #888;
 }
 
+.pageWrapper{
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 8rem 1fr 8rem 5rem;
+  grid-template-areas:
+    "header header"
+    "myForm cvDisplay"
+    "myForm cvFooter"
+    "footer footer";
+}
+.header{
+  grid-area: header;
+}
+.cvDisplay{
+  grid-area: cvDisplay;
+
+}
+.cvFooter{
+  grid-area: cvFooter;
+
+}
+.footer{
+  grid-area: footer;
+}
 .myForm{
   display: flex;
   flex-direction: column;
+  grid-area: myForm;
 }
+
+
+
+

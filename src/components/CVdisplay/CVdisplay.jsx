@@ -74,7 +74,7 @@ const MyDocument = ({ formData }) => (
       </View>
 
       {/* Footer */}
-      <Text style={styles.footer}>Generated with React PDF</Text>
+      <Text style={styles.footer}>by L CV Generator</Text>
 
       
     </Page>

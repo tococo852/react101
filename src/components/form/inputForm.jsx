@@ -22,7 +22,8 @@ const InputForm=({isEditable,setIsEditable,formData,setFormData})=>{
     }
 
 
-    return <form className='myForm' onSubmit={handleSubmit}>
+    return <>{isEditable?(
+        <form className='myForm' onSubmit={handleSubmit}>
 
         <h4>Contact info</h4>
         <InputBar label='name' 
@@ -66,13 +67,19 @@ const InputForm=({isEditable,setIsEditable,formData,setFormData})=>{
         value={formData['experience']}
         changeValue={changeValue}
         isEditable={isEditable}/>
-        {isEditable?(
+
             <button type='submit'
             >Submit</button>
-        ):(
-        <button type='button' onClick={editToggle}>edit</button>
-        )}
+
+
         </form>
+            ):(
+                <div className='editButtonContainer'>
+                    <button type='button' onClick={editToggle}>edit</button>
+
+                </div>
+            )}
+        </>
 
 
 

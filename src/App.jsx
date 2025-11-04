@@ -19,22 +19,27 @@ function App() {
     })
 
     const formMemo= useMemo(()=>{return formData},[isEditable])
-
+    
   return (
-    <>
-      <header>CV generator</header>
+    <div className='pageWrapper'>
+      <header className='header'>CV generator</header>
       <InputForm
+      className='myForm'
       isEditable={isEditable}
       setIsEditable={setIsEditable}
       formData={formData}
       setFormData={setFormData}/>
-      <CvDisplay
-      formData={formMemo}
-      isEditable={isEditable}/>
-      <DownloadButton formData={formMemo}/>
-      <footer>By Luciano</footer>
 
-    </>
+      <CvDisplay
+      className='cvDisplay'
+      formData={formMemo}/>
+      <div className='cvFooter'>
+        <DownloadButton formData={formMemo}/>
+      </div>
+      <footer
+      className='footer'>By Luciano</footer>
+
+    </div>
 
   )
 }
